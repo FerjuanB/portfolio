@@ -1,0 +1,59 @@
+---
+import ExperienceItem from "./icons/ExperienceItem.astro"
+
+const EXPERIENCE =[
+{
+        date:"January 2024",
+        title:"Shortcut APP",
+        description: "Register, create and save your own shortcuts for web addresses, an App, create with React, Vite, Tailwind and Firebase",
+        link:"https://fir-learn-e247f.web.app/login",
+        image:"/src/utils/Shortcut.png",
+        github:"https://github.com/FerjuanB/Shortcut_App"
+
+
+    },    
+{
+        date:"December 2023",
+        title:"Finished FULL STACK developer career at SOY HENRY Academy",
+        description: " Development of the web structure and architecture: to organize the information in the most efficient way possible. Interface design and visuals. Facilitate navigation and improve the user experience.",
+        link:"https://d2rf2c6bvm78n9.cloudfront.net/new-cert?id=1e9ecb4cc52cf8b83ec3b527449f4d8b56e6e1c912a4c898743faf1e08d8966e"
+
+    },
+    {
+    date: "December 2023",
+    title: "Bachelor's Degree in Nursing",
+    description: "Graduated from the Autonomous University of Entre Ríos with a degree in nursing."
+  },
+  {
+    date: "December 2023",
+    title: "Fit Revolution Project",
+    description: "Completed a project with a team focused on managing and tracking workout routines and coach selections. The App is made with the following technologies: React & Vite, Redux, Material UI, Firebase, Stripe, Cloudinary,  Module CSS, NodeJs, Express, Sequelize, SQL, PostgreSQL. ",
+    link:"https://fit-revolution-main.vercel.app/",
+    image:"https://res.cloudinary.com/fitevolution/image/upload/v1705675745/fitRevolution_zf7goa.png",
+    github:"https://github.com/cls315/FitEvolution"
+  },
+  {
+    date: "November 2023",
+    title: "Pokémon API",
+    description: "Completed a single API listing Pokémon and allowing filtering by various criteria. Also, implemented the ability to create new Pokémon. The App is made with the following technologies: React, Redux, Module CSS, NodeJs, Express, Sequelize, SQL, PostgreSQL. ",
+    link:"https://pokemon-front-red.vercel.app/home",
+    image:"https://res.cloudinary.com/fitevolution/image/upload/v1705675849/Captura_de_pantalla_de_2024-01-19_11-50-23_jkghqs.png",
+    github:"https://github.com/FerjuanB/PokemonDeployed"  
+
+  }
+
+]
+---
+
+
+<ol class="relative border-s border-gray-200 ml-3">                  
+    {
+    EXPERIENCE.map(exp =>(
+        <li class="mb-10 ms-4">
+        <ExperienceItem  {...exp}/>
+            </li>
+    ))
+    }
+
+</ol>
+

@@ -1,0 +1,60 @@
+---
+import LinkBtn from '../LinkBtn.astro'
+import Github from './Github.astro'
+import WebLink from './WebLink.astro'
+
+export interface Props {
+title: string
+description: string
+link?: string
+date:string
+image?:string
+github?:string
+}
+
+const {title, date, description, link,image, github} =Astro.props
+---
+
+
+<div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+<time class="mb-6 text-sm font-normal leading-none text-sky-200">{date}</time>
+<h3 class="text-lg font-semibold text-yellow-400  mt-2 dark:text-white">{title}</h3>
+<p class="mb-5 text-base font-normal  text-sky-200 italic text-pretty">{description}</p>
+{
+    (link && !github)&& <LinkBtn href={link}>
+        Learn more...<svg class="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+</svg>
+    </LinkBtn>
+}
+<section class="flex flex-col gap-y-16">
+
+    <article >
+        {
+image && 
+    
+    <img src={image} class="rounded-xl shadow-xl shadow-white/25"alt="project-image-{image}">
+    
+    
+    </article>
+}
+<footer class="flex mt-4 gap-x-4 justify-end items-end">
+
+    { github &&
+    <LinkBtn href={github}>
+        <Github class="size-5"/>
+        View Source Code
+        </LinkBtn>
+        
+    }
+    {
+        link && github &&
+        <LinkBtn href={link}>
+            <WebLink class="size-5"/>
+            Go to Web Site
+            </LinkBtn>
+        }
+        </footer>
+</section>
+
+

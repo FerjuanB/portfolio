@@ -1,0 +1,28 @@
+---
+import Badge from "@/components/Badge.astro";
+import SectionCont from "@/components/SectionCont.astro";
+import SocialData from "@/components/SocialData.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout 
+title="Design system"
+description="Components portfolio's catalog"
+>
+
+<SectionCont  class="py-20 pb-30">
+
+    <h1 class="text-white">&lt;Badge/&gt;</h1>
+    <Badge>
+        Tailwind
+    </Badge>
+    
+</SectionCont>
+<SectionCont class="py-20 pb-30">
+
+    <h1 class="text-white">&lt;Social Data/&gt;</h1>
+    <SocialData>
+        LinkedIn
+    </SocialData>
+</SectionCont>
+</Layout>
