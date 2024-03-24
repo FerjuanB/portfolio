@@ -9,10 +9,11 @@ description: string
 link?: string
 date:string
 image?:string
+video?:string
 github?:string
 }
 
-const {title, date, description, link,image, github} =Astro.props
+const {title, date, description, link,image, video, github} =Astro.props
 ---
 
 
@@ -28,16 +29,20 @@ const {title, date, description, link,image, github} =Astro.props
     </LinkBtn>
 }
 <section class="flex flex-col gap-y-16">
-
-    <article >
+    <article>
         {
-image && 
+          image &&
+          <img src={image} class="rounded-xl shadow-xl shadow-white/25" alt={`project-image-${image}`} />
+        }
     
-    <img src={image} class="rounded-xl shadow-xl shadow-white/25"alt="project-image-{image}">
-    
-    
-    </article>
-}
+        {
+          video &&
+          <video width="100%" height="auto" controls>
+            <source src={video} type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+        }
+      </article>
 <footer class="flex mt-4 gap-x-4 justify-end items-end">
 
     { github &&
